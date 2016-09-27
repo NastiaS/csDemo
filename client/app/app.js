@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('Soju', ['auth0.lock', 'angular-jwt', 'ngRoute', 'ngMaterial', 'ngMessages', 'chart.js', 'ui.knob']);
+var app = angular.module('Soju', ['auth0.lock', 'angular-jwt', 'ngRoute', 'ngMaterial', 'ngMessages', 'chart.js', 'ui.knob', 'ngFileUpload']);
 
 app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$httpProvider', 'lockProvider', 'jwtOptionsProvider', function($routeProvider, $locationProvider, $mdThemingProvider, $httpProvider, lockProvider, jwtOptionsProvider) {
 
@@ -47,16 +47,9 @@ app.config(['$routeProvider', '$locationProvider', '$mdThemingProvider', '$httpP
 			templateUrl: 'user_profile/user_profile.html',
 			controller: 'UserProfileController'
 		}).
-		when('/feed', {
-			templateUrl: 'feed/feed.html',
-			controller: 'FeedController',
-			resolve: {
-				nytFeed: ['Feed', function(Feed) {
-
-					return Feed.getNews();
-
-				}]
-			}
+		when('/convert_file', {
+			templateUrl: 'convert_file/convert_file.html',
+			controller: 'ConvertFileController'
 		});
 		// otherwise({
 		// 	redirectTo: '/'

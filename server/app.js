@@ -12,12 +12,15 @@ var path = require('path'),
 	bodyParser = require('body-parser'),
 	config = require('./configuration/environment/development.js');
 
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 require(path.join(__dirname, '/configuration/routes.js'))(app);
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(cookieParser());
+
 
 app.use(express.static(path.join(__dirname, '../bower_components')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
@@ -31,7 +34,6 @@ app.use(function(err, req, res, next) {
 	res.status(err.status || 500).send(err.message || 'Internal server error.');
 
 });
-
 
 app.listen(config.PORT, function() {
 

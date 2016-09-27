@@ -1,0 +1,70 @@
+<div id="container" layout="column" layout-fill>
+	<ng-include src="'shared/templates/toolbar.html'"></ng-include>
+	<section layout="row" flex>
+		<ng-include src="'shared/templates/sidenav.html'"></ng-include>
+		<md-content>
+			<md-card class="fileUploadCard">			
+				<md-card-content>
+					<h2 class="fileUploadTitle">Convert your document</h2>
+					<div layout="row" class="fileUploadSection">
+						<div flex class="fileUploadColOne">
+							<img class="fileUpload" alt="" src="https://hd.unsplash.com/photo-1421882046699-09a0ff4ffb1b">
+						</div>
+						<div flex class="fileUploadColTwo">
+							<p><form name="form" enctype="multipart/form-data">
+								<p>Upload .pdf/.docx:</p>
+								<md-button ngf-select ng-model="file" name="file"
+								accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, .html">Select</md-button>
+								<!-- <md-button type="submit" ng-click="submit()">submit</md-button> -->
+								</form>
+							</p>
+						</div>
+					</div>					
+				</md-card-content>
+				<md-card-actions layout="row" layout-align="end center">
+					<md-button type="submit" ng-click="submit()">Submit</md-button>
+					<md-button ng-click="convertFile(file_id)">Convert</md-button>
+					<!-- <md-button ng-click="convertFileToJSON(docToDownload)">Convert to JSON</md-button> -->
+				</md-card-actions>
+				<md-card-footer>
+					<div layout="row" class="downloadOptions" ng-show="showLink">
+						<p>Download options</p>
+						<div flex class="downloadPlainText">
+							<md-button href="javascript:void(0);" ng-click="download(docToDownload)">Download As Plain Text</md-button>
+						</div>
+						<div flex class="downloadJSON">
+							<md-button href="javascript:void(0);" ng-click="downloadJSON(docToDownload)">Download as JSON</md-button>
+						</div>												
+					</div>
+				</md-card-footer>
+			</md-card>
+		</md-content>
+	</section>
+	<ng-include src="'shared/templates/footer.html'"></ng-include>
+
+
+	<!-- <md-card>
+        <md-card-header>
+          <md-card-avatar>
+           <i class="material-icons">attach_file</i>
+          </md-card-avatar>
+          <md-card-header-text>
+            <span class="md-title">Converted documents ready for processing. Easy.</span>
+            <!-- <span class="md-subhead">Material</span> -->
+          <!-- </md-card-header-text>
+        </md-card-header>
+        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card header</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p>
+            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+          </p>
+        </md-card-content>
+      </md-card> -->
+</div>
+

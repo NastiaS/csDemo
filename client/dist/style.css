@@ -108,7 +108,7 @@ body {
   flex-grow: 0; }
 
 #landingBanner {
-  background-image: url("images/Desktop.png");
+  background-image: url("images/photo.jpeg");
   background-size: 100%;
   background-repeat: no-repeat;
   height: 40vw; }
@@ -297,8 +297,41 @@ label {
   .newsfeedCard {
     width: 100%; } }
 
-.news-feed {
-  overflow: scroll; }
+.thumb {
+  width: 24px;
+  height: 24px;
+  float: none;
+  position: relative;
+  top: 7px; }
+
+.fileUpload {
+  width: 200px;
+  height: 80px; }
+
+.fileUploadCard {
+  padding: 10px; }
+
+.fileUploadSection {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+
+.fileUploadColOne {
+  flex-basis: 45%;
+  /*	flex-grow: 0;*/ }
+
+.fileUploadColTwo {
+  flex-basis: 40%;
+  flex-grow: 0; }
+
+.downloadOptions {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+
+.downloadPlainText, .downloadJSON {
+  flex-basis: 50%;
+  flex-grow: 0; }
 
 /* Sidenav Section*/
 md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-active {

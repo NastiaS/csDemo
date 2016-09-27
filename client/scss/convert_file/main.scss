@@ -1,0 +1,33 @@
+.fileUpload{
+	width: 200px;
+	height: 80px;
+}
+.fileUploadCard{
+	padding: 10px;
+}
+
+.fileUploadSection{
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.fileUploadColOne{
+	flex-basis: 45%;
+/*	flex-grow: 0;*/
+}
+
+.fileUploadColTwo{
+	flex-basis: 40%;
+	flex-grow: 0;
+}
+
+.downloadOptions{
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+.downloadPlainText, .downloadJSON{
+	flex-basis: 50%;
+	flex-grow: 0;
+}
