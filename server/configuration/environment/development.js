@@ -28,8 +28,8 @@ module.exports = {
 	NYTAPI: 'f47b5dbbdee949f59acc93afdf017e37',
 	BLUEMIX_SERVICE_CREDENTIALS: {
 		'document_conversion': {
-			'username': document_conversion.username || 'de5de2de-899c-49d3-ae62-a5da13372834',
-			'password': document_conversion.password || 'Xa8PfwdkImkt'
+			'username': document_conversion.username,
+			'password': document_conversion.password
 		}
 	}
 };
