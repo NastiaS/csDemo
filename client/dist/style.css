@@ -305,11 +305,28 @@ label {
   top: 7px; }
 
 .fileUpload {
-  width: 200px;
-  height: 80px; }
+  /*width: 400px;*/
+  height: 200px; }
+
+.cardsContainer {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+
+.firstColFullWidth {
+  flex-basis: 100%; }
+
+.firstCardCol, .secondCardCol {
+  flex-basis: 50%;
+  flex-grow: 0; }
+
+.fileUploadOpacity {
+  height: 200px;
+  opacity: 0.5; }
 
 .fileUploadCard {
-  padding: 10px; }
+  padding: 10px;
+  height: 420px; }
 
 .fileUploadSection {
   flex-direction: row;
@@ -318,20 +335,81 @@ label {
 
 .fileUploadColOne {
   flex-basis: 45%;
-  /*	flex-grow: 0;*/ }
+  flex-grow: 0; }
 
 .fileUploadColTwo {
   flex-basis: 40%;
   flex-grow: 0; }
 
+.cardHeader {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2d87b2; }
+
+.cardHeaderDownloadOptions {
+  height: 50px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2d87b2; }
+
 .downloadOptions {
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center; }
 
 .downloadPlainText, .downloadJSON {
   flex-basis: 50%;
-  flex-grow: 0; }
+  flex-grow: 0;
+  display: block; }
+
+.downloadButton {
+  background-color: #f2f3f5;
+  align-items: center; }
+
+.downloadText {
+  display: inline-block;
+  padding: 0 10px;
+  font-family: "Muli", sans-serif;
+  font-size: 14px;
+  font-weight: italic; }
+
+.uploadFileButtonConvert {
+  background-color: #2d87b2;
+  color: #fff;
+  width: 100vh; }
+
+.uploadFileButton {
+  background-color: #2d87b2;
+  color: #fff; }
+
+.uploadFileName {
+  display: inline-block;
+  padding: 0 10px;
+  font-family: "Muli", sans-serif;
+  font-size: 12px;
+  font-weight: normal; }
+
+.uploadFileName > i {
+  font-size: 10px !important; }
+
+.selectFileForm {
+  display: inline-block; }
+
+md-radio-button {
+  display: inline-block; }
+
+div.md-on {
+  background-color: #fc5b6c !important; }
+
+md-card-header-text {
+  font-family: "Muli", sans-serif;
+  font-size: 14px;
+  font-weight: normal; }
+
+md-button {
+  font-family: "Muli", sans-serif !important;
+  font-size: 14px; }
+
+md-radio-button > div.md-label {
+  margin-left: 15px !important; }
 
 /* Sidenav Section*/
 md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-active {

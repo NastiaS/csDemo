@@ -27,21 +27,29 @@ angular.module('Soju')
 			}, function(resp) {
 
 				console.log('Error status: ' + resp.status);
-
+			
 			});
-			// }, function (evt) {
-			//     var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-			//     console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-					// });
 
 		},
-		convertFile: function(fileId) {
+		convertFile: function(fileId, outputType) {
 
-			console.log('FILE ID ANGULAR:', fileId);
+			function mapOutputType() {
+
+				switch (outputType) {
+				case 'JSON':
+					return 'ANSWER_UNITS';
+				case 'Plain Text':
+					return 'NORMALIZED_TEXT';
+				default:
+					return 'NORMALIZED_TEXT';
+				}
+
+			}
+
 			return $http({
 				url: '/api/file_upload',
 				method: 'GET',
-				params: {'file_id': fileId}
+				params: {'file_id': fileId, 'outputType': mapOutputType()}
 			}).then(function(response) {
 
 				console.log('RESPONCE FROM GET ', response);

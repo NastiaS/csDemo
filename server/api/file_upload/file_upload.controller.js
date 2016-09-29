@@ -66,11 +66,11 @@ exports.upload_file = function(req, res, next) { // eslint-disable-line no-unuse
 };
 
 exports.convert_file= function(req, res, next) { // eslint-disable-line no-unused-vars, space-infix-ops
-
+	
 	var file = getFilePath(req.query.file_id),
 		
 		params = {
-			conversion_target: 'ANSWER_UNITS',
+			conversion_target: req.query.outputType,
 			file: file ? fs.createReadStream(file) : null
 		};
 
@@ -81,7 +81,7 @@ exports.convert_file= function(req, res, next) { // eslint-disable-line no-unuse
 			return next(err);
 
 		}
-		var type = 'ANSWER_UNITS';
+		var type = req.query.outputType;
 		res.type(type);
 		if (req.query.download) {
 
